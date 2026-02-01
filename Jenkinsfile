@@ -48,7 +48,7 @@ pipeline {
                 echo 'Test stage'
                 sh'''
                     npm i -D serve
-                    node_modules/.bin/serve -s build & //El signo de & es para start el command en el background. Para que no se tranque.
+                    node_modules/.bin/serve -s build & 
                     sleep 10
                     npx playwright test 
 
