@@ -48,8 +48,10 @@ pipeline {
                 echo 'Test stage'
                 sh'''
                     npm i -D serve
-                    npx serve -s build
+                    node_modules/.bin/serve -s build
                     npx playwright test 
+
+                    
                 '''
             }
         }
