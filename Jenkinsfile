@@ -28,10 +28,10 @@ pipeline {
                         docker{
                             image 'node:18-alpine'
                             reuseNode true
+                        }
                     }
-            }
                     steps{
-                        echo 'Test stage'
+                        echo 'Unit Test stage'
                         sh'''
                             test -f build/index.html
                             npm test
@@ -52,7 +52,7 @@ pipeline {
                         }
                     }
                     steps{
-                        echo 'Test stage'
+                        echo 'E2E stage'
                         sh'''
                             npm i -D serve
                             node_modules/.bin/serve -s build & 
@@ -65,7 +65,6 @@ pipeline {
                             publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, icon: '', keepAll: false, reportDir: 'playwright-report', reportFiles: 'index.html', reportName: 'Playwright HTML Report', reportTitles: '', useWrapperFileDirectly: true])
                         }
                     }
-                }
                 }
                 
             }
