@@ -11,6 +11,7 @@ pipeline {
         stage('Build') {
             agent{
                 docker{
+                    echo 'prueba Mikael'
                     image 'node:18-alpine'
                     reuseNode true
                 }
