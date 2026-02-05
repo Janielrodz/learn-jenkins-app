@@ -9,6 +9,12 @@ pipeline {
 
     stages {
 
+        stage('Docker') {
+            steps {
+                sh 'docker build -t myplaywright .'
+            }
+        }
+
         stage('Build') {
             agent{
                 docker{
@@ -90,7 +96,6 @@ pipeline {
             }
 
             steps{
-                echo 'E2E stage'
                 sh'''
                     npm install netlify-cli@20.1.1 node-jq
                     node_modules/.bin/netlify --version
