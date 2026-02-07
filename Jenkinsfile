@@ -45,7 +45,6 @@ pipeline {
                 sh '''
                     docker version
                     docker build -t $AWS_DOCKER_REGISTRY/$APP_NAME:$REACT_APP_VERSION .
-                    aws s3 ls
                 '''
             }
         }        
