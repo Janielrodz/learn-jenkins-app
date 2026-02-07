@@ -2,10 +2,10 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "family": "LearnJeankinsApp-TaskDefinition-Prod",
+    "family": "LearnJenkinsApp-TaskDefinition-Prod",
     "containerDefinitions": [
         {
-            "name": "learnjeakinsapp",
+            "name": "learnjenkinsapp",
             "image": "nginx:1.27-alpine",
             "portMappings": [
                 {
