@@ -33,7 +33,7 @@ pipeline {
         stage('Build Docker image') {
             agent {
                 docker {
-                    image 'amazonlinux:2'
+                    image 'amazon/aws-cli'
                     reuseNode true
                     args "-u root -v /var/run/docker.sock:/var/run/docker.sock --entrypoint=''"
                 }
@@ -41,7 +41,7 @@ pipeline {
 
             steps {
                 sh '''
-                    amazon-linux-extras install docker
+                    yum install docker -y
                     docker build -t myjenkinsapp .
                 '''
             }
