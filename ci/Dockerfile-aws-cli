@@ -1,2 +1,2 @@
 FROM amazon/aws-cli
-RUN yum install jq -y
+RUN apk add --no-cache aws-cli jq bash
