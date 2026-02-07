@@ -1,2 +1,2 @@
-FROM amazon/aws-cli
+FROM docker:27-cli
 RUN apk add --no-cache aws-cli jq bash
